@@ -10,14 +10,15 @@
 ## Prérequis
 
 - Node.js installé sur votre machine.
-- Avoir le fichier `Artefacts.json` dans le même répertoire que le script.
+- Avoir le fichier `artefact.json` dans le même dossier `Artefacts`.
 
 
 ## Exemple & Résultats
-### Artefact (exemple)
+### Artefact (Exemple : Capture Data d'un Discord problématique via un autre script non public):
 ![alt text](images/artefact.png)
-### Résultats:
+### Résultats (Exemple : Ce sont les ID des messages):
 ![alt text](images/result.png)
+
 
 
 # Clause de non-responsabilité :
