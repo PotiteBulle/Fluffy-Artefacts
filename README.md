@@ -13,10 +13,10 @@
 - Avoir le fichier `artefact.json` dans le même dossier `Artefacts`.
 
 
-## Exemple & Résultats
+## Exemple & Résultat
 ### Artefact (Exemple : Capture Data d'un Discord problématique via un autre script non public):
 ![alt text](images/artefact.png)
-### Résultats (Exemple : Ce sont les ID des messages):
+### Résultat (Exemple : Ce sont les ID des messages):
 ![alt text](images/result.png)
 
 
