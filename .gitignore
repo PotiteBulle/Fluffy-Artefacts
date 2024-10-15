@@ -3,3 +3,9 @@ Artefacts/
 
 # Ignorer le dossier Results
 Results/
+
+# Ignorer le dossier des modules Node.js
+node_modules/
+
+# Ignorer le dossier Archives
+Archives/
