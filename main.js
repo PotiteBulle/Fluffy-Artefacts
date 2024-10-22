@@ -3,7 +3,7 @@ const path = require('path');
 const JSONStream = require('JSONStream');
 
 // Chemin du fichier d'entrée
-const inputFilePath = 'Artefacts/artefact_1263472361324285962.json'; // CHANGE THIS
+const inputFilePath = 'Artefacts/artefact_********.json'; // CHANGE THIS
 // Générer un nombre aléatoire entre 1 et 999
 const randomNum = Math.floor(Math.random() * 999) + 1;
 // Chemin du dossier et du fichier de sortie
