@@ -1,7 +1,8 @@
 const { v4: uuidv4 } = require('uuid');
 
 /**
- * Anonymise et valide les messages.
+ * Fonction pour anonymiser et valider les messages.
+ * Cette version prend également en compte les liens dans le contenu du message.
  * @param {Array} messages - Liste des messages.
  * @returns {Array} Messages anonymisés.
  */
@@ -16,13 +17,31 @@ function processMessages(messages) {
             return null;
         }
 
+        // Remplacer les liens dans le contenu par un identifiant unique
+        const contentWithAnonymizedLinks = anonymizeLinks(msg.content);
+
         return {
             anonymizedID: uuidv4(),
             pseudo: msg.pseudo,
             timestamp: msg.timestamp,
-            content: msg.content,
+            content: contentWithAnonymizedLinks,
         };
     }).filter(Boolean); // Filtre les messages invalides
+}
+
+/**
+ * Remplace les liens dans le contenu par un identifiant unique.
+ * @param {string} content - Le contenu du message.
+ * @returns {string} Le contenu avec les liens anonymisés.
+ */
+function anonymizeLinks(content) {
+    // Expression régulière pour détecter les liens (URLs)
+    const urlRegex = /https?:\/\/[^\s]+/g;
+    
+    return content.replace(urlRegex, (url) => {
+        // Remplacer chaque lien par un identifiant unique
+        return `[Lien Anonymisé ${uuidv4()}]`;
+    });
 }
 
 module.exports = { processMessages };
