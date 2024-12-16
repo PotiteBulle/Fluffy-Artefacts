@@ -1,0 +1,14 @@
+[
+  {
+    "anonymizedID": "4795449d-e6a4-4a92-a2af-ec1751bd0278",
+    "pseudo": "JohnDoe",
+    "timestamp": "2024-12-16T12:34:56Z",
+    "content": "Bonjour tout le monde !"
+  },
+  {
+    "anonymizedID": "13eaed92-3639-4d01-a9a9-56d06ec6e36a",
+    "pseudo": "JaneDoe",
+    "timestamp": "2024-12-16T13:45:00Z",
+    "content": "Salut, ça va ?"
+  }
+]
