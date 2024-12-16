@@ -1,0 +1,16 @@
+{
+    "messages": [
+        {
+            "id": "12345",
+            "pseudo": "JohnDoe",
+            "timestamp": "2024-12-16T12:34:56Z",
+            "content": "Bonjour tout le monde !"
+        },
+        {
+            "id": "67890",
+            "pseudo": "JaneDoe",
+            "timestamp": "2024-12-16T13:45:00Z",
+            "content": "Salut, ça va ?"
+        }
+    ]
+}
