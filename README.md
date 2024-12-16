@@ -9,7 +9,7 @@
 - Génération d’identifiants uniques (UUID) pour chaque message.
 - Respect des meilleures pratiques en matière de sécurité et de qualité du code.
 
-## Strcuture du Projet Artéfact
+## Structure du Projet
 ```
 Fluffy-Artefacts/
 ├── Artefacts/
