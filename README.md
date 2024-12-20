@@ -3,34 +3,28 @@
 
 ## Fonctionnalités
 
-- Anonymisation des messages JSON.
-- Traitement des données utilisateurices.
-- Exportation des messages anonymisés sous différents formats.
-- Génération d’identifiants uniques (UUID) pour chaque message.
-- Respect des meilleures pratiques en matière de sécurité et de qualité du code.
+- **Extraction des messages** : Lecture d'un fichier JSON d'entrée et extraction des messages avec leurs identifiants, horodatages et contenus.
+- **Extraction des IDs des auteurs** : Identification et enregistrement des identifiants uniques des auteurs des messages.
+- **Suppression des doublons** : Élimination des entrées en double dans les fichiers de sortie pour garantir l'unicité des données.
+- **Génération de fichiers de sortie uniques** : Les fichiers générés portent des noms incluant un nombre aléatoire pour éviter les collisions et assurer une gestion efficace des versions.
 
-## Structure du Projet
-```
-Fluffy-Artefacts/
-├── Artefacts/
-│   ├── artefact.json        // Fichier JSON source.
-│   └── output/              // Dossier des fichiers anonymisés générés.
-├── src/
-│   ├── reader.js            // Gestion de la lecture des fichiers.
-│   ├── processor.js         // Traitement et anonymisation des données.
-│   ├── writer.js            // Écriture des données dans des fichiers JSON.
-│   └── utils/logger.js      // Module pour la gestion des logs.
-├── app.js                   // Script principal qui orchestre tout.
-├── package.json             // Dépendances du projet.
-└── README.md                // Documentation du projet.
+## Structure du projet
 
-```
+- `app.js` : Script principal orchestrant l'extraction des messages, l'identification des auteurs, et la suppression des doublons.
+- `Artefacts/` : Répertoire contenant le fichier d'entrée `artefact.json` et les fichiers de sortie générés.
+- `package.json` : Fichier listant les dépendances du projet, notamment `JSONStream`.
+- `README.md` : Documentation du projet.
 
 ## Installation
 
 ### Prérequis
 
-Avant d'installer et d'exécuter ce projet, assurez-vous que Node.js et npm sont installés. Vous pouvez les télécharger et les installer depuis [Node.js](https://nodejs.org/).
+**Node.js** : Assurez-vous que Node.js est installé sur votre machine. Vous pouvez le télécharger depuis [le site officiel](https://nodejs.org/).
+- **Dépendances** : Installez les dépendances nécessaires en exécutant la commande suivante dans le répertoire du projet :
+  ```bash
+  npm install
+  ```
+
 
 
 ## Exemple & Résultat
@@ -41,31 +35,16 @@ Avant d'installer et d'exécuter ce projet, assurez-vous que Node.js et npm sont
 
 ### Étapes d'installation
 
-1. Clonez ce dépôt dans votre répertoire local :
-
-   ```
-   git clone https://github.com/PotiteBulle/Fluffy-Artefacts.git
-   cd Fluffy-Artefacts
-   ```
-
-2. Installez les dépendances nécessaires :
-
-   ```
-   npm install
-   ```
-
-3. Lancez le projet avec la commande suivante :
-
-   ```
-   npm start
-   ```
+- Clonez ce dépôt dans votre répertoire local
+- Installez les dépendances nécessaires
+- Lancez le projet avec la commande suivante
 
 ## Utilisation
 
 Une fois le projet démarré, vous pouvez interagir avec l'outil via la ligne de commande ou utiliser les points de terminaison API fournis pour l'intégration dans d'autres systèmes.
 
 
-# Clause de non-responsabilité :
+# Clause de non-responsabilité : Avertissement
 Les outils et scripts présentés ici sont fournis à des fins éducatives et informatives. Leur utilisation se fait à vos propres risques. L’auteur·ice ne peut être tenu·e responsable de tout dommage, perte de données ou violation de sécurité résultant de leur utilisation. Veillez à tester ces outils dans un environnement sécurisé et à respecter les lois et réglementations en vigueur dans votre juridiction. L’utilisation non autorisée de ces outils peut contrevenir à la législation locale ou internationale.
 
 
