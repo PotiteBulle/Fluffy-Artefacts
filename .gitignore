@@ -2,7 +2,7 @@
 Artefacts/
 
 # Ignorer le dossier Results
-Results/
+Artefacts/output
 
 # Ignorer le dossier des modules Node.js
 node_modules/
