@@ -9,6 +9,30 @@ const outputDir = path.join(artefactsDir, 'output'); // Dossier de sortie pour l
 // Fichier d'entrée principal
 const artefactJsonFilePath = path.join(artefactsDir, 'artefact.json');
 
+// Fonction pour randomiser une chaîne de caractères
+function randomizeString(length = 10) {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return result;
+}
+
+// Fonction pour remplacer les liens Discord par [Lien interdit]
+function replaceDiscordLinks(content) {
+    // Expression régulière pour détecter les liens Discord
+    const discordLinkRegex = /https:\/\/discord\.gg\/[a-zA-Z0-9]+/gi;
+
+    // Remplacer les liens Discord par [Lien interdit]
+    return content.replace(discordLinkRegex, (match) => {
+        // Randomiser l'identifiant du lien avant de le remplacer
+        const randomizedLink = `https://discord.gg/${randomizeString()}`;
+        console.log(`Lien Discord randomisé : ${match} -> ${randomizedLink}`);
+        return "[Lien interdit]";
+    });
+}
+
 // Fonction 1 : Extraction des messages du fichier JSON
 async function extractMessages() {
     const randomNum = Math.floor(Math.random() * 999) + 1; // Génération d'un identifiant aléatoire
@@ -31,6 +55,9 @@ async function extractMessages() {
         fileStream
             .pipe(jsonStream)
             .on('data', (message) => {
+                // Remplacer les liens Discord dans le contenu du message
+                const sanitizedContent = replaceDiscordLinks(message.content);
+
                 // Écrit chaque message dans le fichier de sortie
                 outputStream.write(isFirstMessage ? '' : ',');
                 isFirstMessage = false;
@@ -38,7 +65,7 @@ async function extractMessages() {
                     JSON.stringify({
                         id: message.id,
                         timestamp: message.timestamp,
-                        content: message.content,
+                        content: sanitizedContent, // Utiliser le contenu nettoyé
                     })
                 );
             })
