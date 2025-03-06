@@ -1,0 +1,14 @@
+[
+  {
+    "id": "6789012345",
+    "username": "JaneDoe",
+    "message": "Bonjour tout le monde !",
+    "timestamp": "2024-12-16T12:34:56Z"
+  },
+  {
+    "id": "Unknown_ID",
+    "username": "JaneDoe",
+    "message": "Salut, ça va ?",
+    "timestamp": "2024-12-16T13:45:00Z"
+  }
+]
